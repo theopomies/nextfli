@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Accordion } from "../components";
+import { OptFormContainer } from "./OptForm";
 
 export declare interface FaqData {
   id: number;
@@ -35,6 +36,8 @@ export function FaqContainer({ faqData }: FaqContainerProps) {
           </Accordion.Item>
         ))}
       </Accordion.Frame>
+
+      <OptFormContainer />
     </Accordion>
   );
 }

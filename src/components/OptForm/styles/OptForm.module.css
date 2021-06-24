@@ -1,0 +1,181 @@
+.container {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  padding: 0 2rem;
+}
+
+.inputContainer {
+  position: relative;
+  max-width: 450px;
+  width: 100%;
+  border: 0;
+  height: 70px;
+  box-sizing: border-box;
+}
+
+.input {
+  max-width: 450px;
+  width: 100%;
+  border: 0;
+  padding: 15px 10px 10px 10px;
+  height: 70px;
+  box-sizing: border-box;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  position: absolute;
+  font-size: 16px;
+}
+
+.input::placeholder {
+  opacity: 0%;
+}
+
+.label {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  top: 50%;
+  left: 10px;
+  color: #8c8c8c;
+  transform: translateY(-50%);
+  transition: 0.1s ease;
+}
+
+.input:focus + .label,
+.input:not(:placeholder-shown) + .label {
+  top: 0.75rem;
+  font-weight: bold;
+  font-size: 0.8rem;
+  transition: 0.1s ease;
+}
+
+.button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 70px;
+  background: rgb(229, 9, 20);
+  color: white;
+  padding: 0 32px;
+  font-size: 2rem;
+  border: 0;
+  cursor: pointer;
+  font-weight: bold;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.button.loading {
+  justify-content: center;
+  width: 276px;
+  opacity: 50%;
+}
+
+.button.loading :not(div, img) {
+  visibility: hidden;
+}
+
+.button.loading > div {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  z-index: 1;
+  transform: translate(-50%, -50%) !important;
+  min-width: 70px !important;
+  max-width: 200px !important;
+  height: 100%;
+  overflow: visible;
+  filter: brightness(0) invert(1);
+}
+
+.button.loading > div > img {
+  min-width: 0 !important;
+  min-height: 0 !important;
+  height: 3rem !important;
+  width: auto !important;
+  max-height: 3rem !important;
+  max-width: 3rem !important;
+  animation-name: spin;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.button span {
+  margin-left: 1rem;
+  filter: brightness(0) invert(1);
+  width: 24px;
+}
+
+.button svg {
+  height: 1.5rem;
+}
+
+.button:hover {
+  background: rgb(244, 6, 18);
+}
+
+.text {
+  font-size: 19.2px;
+  color: white;
+  text-align: center;
+  font-weight: normal;
+  padding-bottom: 1rem;
+}
+
+@media (max-width: 1000px) {
+  .text {
+    font-size: 1.5rem;
+  }
+
+  .button span {
+    width: 16px;
+  }
+
+  .button {
+    font-size: 16px;
+    margin-top: 20px;
+    font-weight: bold;
+    border-radius: 2px;
+  }
+
+  .button.loading {
+    width: 186px;
+  }
+  .button.loading > div {
+    top: calc(25px + 50%);
+  }
+
+  .inputContainer {
+    margin-top: 20px;
+  }
+
+  .input {
+    border-radius: 2px;
+  }
+
+  .inputContainer,
+  .input,
+  .button {
+    height: 4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .text {
+    font-size: 1rem;
+    line-height: 22px;
+  }
+}
