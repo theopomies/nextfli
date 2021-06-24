@@ -31,7 +31,7 @@ export function FooterContainer() {
 
         <Footer.Column>
           <Footer.LinkContainer>
-            <Footer.Link href="#">Help Centre</Footer.Link>
+            <Footer.Link href="#">Help Center</Footer.Link>
           </Footer.LinkContainer>
           <Footer.LinkContainer>
             <Footer.Link href="#">Jobs</Footer.Link>
@@ -61,7 +61,7 @@ export function FooterContainer() {
 
         <Footer.Column>
           <Footer.LinkContainer>
-            <Footer.Link href="#">Media Centre</Footer.Link>
+            <Footer.Link href="#">Media Center</Footer.Link>
           </Footer.LinkContainer>
           <Footer.LinkContainer>
             <Footer.Link href="#">Buy gift cards</Footer.Link>

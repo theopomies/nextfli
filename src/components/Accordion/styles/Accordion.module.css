@@ -102,4 +102,7 @@
     font-size: 16px;
     line-height: 22px;
   }
+  .inner {
+    padding: 75px 0;
+  }
 }
