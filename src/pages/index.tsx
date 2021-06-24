@@ -8,6 +8,7 @@ import { GetStaticProps } from "next";
 import { readFileSync } from "fs";
 import { join } from "path";
 import { cwd } from "process";
+import { Layout } from "../components";
 
 interface HomeProps {
   jumboProps: JumbotronContainerProps;
@@ -16,11 +17,11 @@ interface HomeProps {
 
 export default function Home({ jumboProps, faqProps }: HomeProps) {
   return (
-    <>
+    <Layout pageTitle="Netflix France - Watch TV Shows Online, Watch Movies Online">
       <JumbotronContainer {...jumboProps} />
       <FaqContainer {...faqProps} />
       <FooterContainer />
-    </>
+    </Layout>
   );
 }
 
