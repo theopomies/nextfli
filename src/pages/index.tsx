@@ -9,6 +9,8 @@ import { readFileSync } from "fs";
 import { join } from "path";
 import { cwd } from "process";
 import { Layout } from "../components";
+import { HeaderContainer } from "../containers/Header";
+import { HomeHeroContainer } from "../containers/HomeHero";
 
 interface HomeProps {
   jumboProps: JumbotronContainerProps;
@@ -18,6 +20,10 @@ interface HomeProps {
 export default function Home({ jumboProps, faqProps }: HomeProps) {
   return (
     <Layout pageTitle="Netflix France - Watch TV Shows Online, Watch Movies Online">
+      <div style={{ overflow: "hidden", borderBottom: "8px solid #222" }}>
+        <HeaderContainer home />
+        <HomeHeroContainer />
+      </div>
       <JumbotronContainer {...jumboProps} />
       <FaqContainer {...faqProps} />
       <FooterContainer />
