@@ -44,6 +44,10 @@
   transition: 0.1s ease;
 }
 
+.input:focus {
+  outline: none;
+}
+
 .input:focus + .label,
 .input:not(:placeholder-shown) + .label {
   top: 0.75rem;
