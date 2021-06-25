@@ -2,10 +2,12 @@
 
 # Nextfli, A Netflix clone in Next.js
 
-This repository is the home of my first big project in Next.js, a Netflix clone, built with [Karl Hadwen's course](https://www.youtube.com/watch?v=x_EEwGe-a9o).
+This repository is the home of my first big project in Next.js, a Netflix clone, inspired by [Karl Hadwen's course](https://www.youtube.com/watch?v=x_EEwGe-a9o).
 
 The goal is for me to _learn and understand_ **Compound Components**, some **advanced React concepts**, adapt everything to **Next.js**
-_(use SSG, SSR if necessary, ...)_, use **CSS-Modules** and tweak the course's project a bit to _play around_.
+_(use SSG, SSR if necessary, ...)_, use **CSS-Modules** and tweak the course's project to fit my needs and _play around_.
+Some components will be _heavily_ inspired by him, others unique, but they ultimately all have some **personnal improvements**
+to match better with Netflix's fr-en version and better 1:1.
 
 ## State
 
