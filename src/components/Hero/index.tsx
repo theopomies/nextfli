@@ -28,7 +28,13 @@ Hero.Background = function HeroBackground({
 }: HeroBackgroundProps) {
   return (
     <>
-      <img className={styles.background} src={src} alt={alt} {...restProps} />
+      <img
+        className={styles.background}
+        src={src}
+        alt={alt}
+        draggable="false"
+        {...restProps}
+      />
       <div className={styles.content}>{children}</div>
     </>
   );
