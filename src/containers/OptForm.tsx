@@ -1,7 +1,7 @@
 import { OptForm } from "../components";
 import { FormEventHandler, useState } from "react";
 
-export function OptFormContainer() {
+export function OptFormContainer({ id }: { id: string }) {
   const [loading, setLoading] = useState(false);
   const submitHandler: FormEventHandler = (e) => {
     e.preventDefault();
@@ -15,7 +15,7 @@ export function OptFormContainer() {
       <OptForm.Text>
         Ready to watch? Enter your email to create or restart your membership.
       </OptForm.Text>
-      <OptForm.Input id="faqForm" placeholder="Email address" />
+      <OptForm.Input id={id} placeholder="Email address" />
       <OptForm.Button loading={loading}>
         <p>Get Started</p>
       </OptForm.Button>

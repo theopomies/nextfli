@@ -37,7 +37,7 @@ export function FaqContainer({ faqData }: FaqContainerProps) {
         ))}
       </Accordion.Frame>
 
-      <OptFormContainer />
+      <OptFormContainer id="faqFormId" />
     </Accordion>
   );
 }

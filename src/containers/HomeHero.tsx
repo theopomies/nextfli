@@ -8,7 +8,7 @@ export function HomeHeroContainer() {
         <Hero.Title>Unlimited movies, TV shows, and more.</Hero.Title>
         <Hero.SubTitle>Watch anywhere. Cancel anytime.</Hero.SubTitle>
         <div>
-          <OptFormContainer />
+          <OptFormContainer id="heroFormId" />
         </div>
       </Hero.Background>
     </Hero>
