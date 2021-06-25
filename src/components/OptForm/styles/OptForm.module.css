@@ -14,6 +14,8 @@
   border: 0;
   height: 70px;
   box-sizing: border-box;
+  display: -webkit-box;
+  display: -moz-box;
 }
 
 .input {
@@ -42,6 +44,10 @@
   color: #8c8c8c;
   transform: translateY(-50%);
   transition: 0.1s ease;
+}
+
+.input:focus {
+  outline: none;
 }
 
 .input:focus + .label,
