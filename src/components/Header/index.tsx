@@ -1,18 +1,44 @@
 import Link from "next/link";
 import styles from "./styles/Header.module.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, ReactNode } from "react";
+
+export declare interface HeaderProps {
+  children?: ReactNode;
+  home?: boolean;
+  browse?: boolean;
+}
+
+export declare interface HeaderLogoProps {
+  active?: boolean;
+}
+
+export declare interface HeaderPaneProps {
+  children?: ReactNode;
+}
+
+export declare interface HeaderButtonProps {
+  children: ReactNode;
+  href: string;
+  className?: string;
+}
+
+export declare interface HeaderLinkProps {
+  href: string;
+  children: ReactNode;
+  [key: string]: any;
+}
 
 export function Header({
   children,
   home = false,
   browse = false,
   ...restProps
-}) {
+}: HeaderProps) {
   const [transparency, setTransparency] = useState(home);
   const [scrollTop, setScrollTop] = useState(0);
 
   useEffect(() => {
-    const onScroll = (e) => {
+    const onScroll = (e: any) => {
       setScrollTop(e.target.documentElement.scrollTop);
     };
     window.addEventListener("scroll", onScroll);
@@ -40,9 +66,12 @@ export function Header({
   return browse ? <div className={styles.headerPinner}>{Header}</div> : Header;
 }
 
-Header.Logo = function HeaderLogo({ active = true, ...restProps }) {
+Header.Logo = function HeaderLogo({
+  active = true,
+  ...restProps
+}: HeaderLogoProps) {
   const Logo = (
-    <span className={styles.logo}>
+    <span className={styles.logo} {...restProps}>
       <svg viewBox="0 0 111 30" focusable="false">
         <g id="netflix-logo">
           <path
@@ -63,7 +92,11 @@ Header.Logo = function HeaderLogo({ active = true, ...restProps }) {
   );
 };
 
-Header.Link = function HeaderLink({ children, href, ...restProps }) {
+Header.Link = function HeaderLink({
+  children,
+  href,
+  ...restProps
+}: HeaderLinkProps) {
   return (
     <Link href={href}>
       <a className={styles.link} {...restProps}>
@@ -73,7 +106,7 @@ Header.Link = function HeaderLink({ children, href, ...restProps }) {
   );
 };
 
-Header.Pane = function HeaderPane({ children, ...restProps }) {
+Header.Pane = function HeaderPane({ children, ...restProps }: HeaderPaneProps) {
   return (
     <span className={styles.pane} {...restProps}>
       {children}
@@ -86,7 +119,7 @@ Header.Button = function HeaderButton({
   href,
   className = styles.button,
   ...restProps
-}) {
+}: HeaderButtonProps) {
   if (className != styles.button) className += " " + styles.button;
   return Header.Link({
     ...restProps,

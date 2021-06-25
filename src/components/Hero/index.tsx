@@ -1,7 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
 import styles from "./styles/Hero.module.css";
+import { ReactNode } from "react";
 
-export function Hero({ children, ...restProps }) {
+export declare interface HeroProps {
+  children?: ReactNode;
+}
+
+export declare interface HeroBackgroundProps {
+  children?: ReactNode;
+  src: string;
+  alt?: string;
+}
+
+export function Hero({ children, ...restProps }: HeroProps) {
   return (
     <section className={styles.hero} {...restProps}>
       <div className={styles.inner}>{children}</div>
@@ -14,7 +25,7 @@ Hero.Background = function HeroBackground({
   alt = "Hero background",
   children,
   ...restProps
-}) {
+}: HeroBackgroundProps) {
   return (
     <>
       <img className={styles.background} src={src} alt={alt} {...restProps} />
@@ -23,7 +34,7 @@ Hero.Background = function HeroBackground({
   );
 };
 
-Hero.Title = function HeroTitle({ children, ...restProps }) {
+Hero.Title = function HeroTitle({ children, ...restProps }: HeroProps) {
   return (
     <h1 className={styles.title} {...restProps}>
       {children}
@@ -31,7 +42,7 @@ Hero.Title = function HeroTitle({ children, ...restProps }) {
   );
 };
 
-Hero.SubTitle = function HeroSubTitle({ children, ...restProps }) {
+Hero.SubTitle = function HeroSubTitle({ children, ...restProps }: HeroProps) {
   return (
     <h2 className={styles.subTitle} {...restProps}>
       {children}
